@@ -1,4 +1,4 @@
-pageextension 50117 "Social Media Card" extends "Customer Card"
+pageextension 50103 "Social Media Card" extends "Customer Card"
 {
     layout
     {

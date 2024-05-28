@@ -1,4 +1,4 @@
-tableextension 50117 "Social Media" extends Customer
+tableextension 50105 "Social Media" extends Customer
 {
     fields
     {

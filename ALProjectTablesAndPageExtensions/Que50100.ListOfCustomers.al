@@ -1,4 +1,4 @@
-query 50124 "List Of Customers"
+query 50104 "List Of Customers"
 {
     Caption = 'List Of Customers';
     QueryType = Normal;
