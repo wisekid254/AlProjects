@@ -2,6 +2,24 @@ page 50148 RoleCenterName
 {
     PageType = RoleCenter;
     Caption = 'My Role Center try';
+    layout
+    {
+        area(RoleCenter)
+        {
+            group(Group1)
+            {
+                part(Part1; RoleCenterHeadline)
+                {
+                    ApplicationArea = All;
+                }
+
+                part(Part2; SalesInvoiceCuePage)
+                {
+                    Caption = 'Invoices';
+                }
+            }
+        }
+    }
 
     actions
     {
@@ -46,6 +64,48 @@ page 50148 RoleCenterName
                 Caption = 'Inventory List';
                 RunObject = page "Inventory Comment List";
                 ApplicationArea = all;
+            }
+        }
+        area(Creation)
+        {
+            action(AddSalesInvoice)
+            {
+                Caption = 'Add Sales Invoice';
+                RunObject = page "Sales Invoice";
+                ApplicationArea = all;
+                RunPageMode = Create;
+            }
+            action(AddPurchaseOrder)
+            {
+                Caption = 'Add Purchase Order';
+                RunObject = page "Purchase Order";
+                ApplicationArea = all;
+                RunPageMode = Create;
+            }
+        }
+        area(Processing)
+        {
+            action(SalesInvoiceProcess)
+            {
+                Caption = 'Sales Invoice';
+                RunObject = page "Sales Invoice";
+                ApplicationArea = all;
+            }
+            action(PurchaseInvoice)
+            {
+                Caption = 'Purchase Invoice';
+                RunObject = page "Purchase Invoice";
+                ApplicationArea = all;
+            }
+        }
+        area(Reporting)
+        {
+            action(SalesInvoiceReport)
+            {
+                Caption = 'Sales Invoice Report';
+                RunObject = report "Standard Sales - Invoice";
+                ApplicationArea = all;
+                Image = Report;
             }
         }
     }
