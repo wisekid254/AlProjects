@@ -15,6 +15,6 @@ page 50147 RoleCenterHeadline
     }
 
     var
-        hdl1Txt: Label '<qualifier>The first headline</qualifier><payload>This is the <emphasize>Headline 1</emphasize>.</payload>';
+        hdl1Txt: Label '<qualifier>The first headline</qualifier><payload>Welcome to   <emphasize>Prista Farmers Corporation</emphasize>.</payload>';
 
 }

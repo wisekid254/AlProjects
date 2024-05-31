@@ -11,10 +11,29 @@ page 50146 SalesInvoiceCuePage
             {
                 Caption = 'Sales Invoices';
                 // CuegroupLayout=Wide;
-                field(SalesCue; SalesInvoicesOpen)
+                field(SalesCue; Rec.SalesInvoicesOpen)
                 {
                     Caption = 'Open';
                     DrillDownPageId = "Sales Invoice List";
+                }
+            }
+            cuegroup(SalesActionontainer)
+            {
+                Caption = 'New Sales Invoice';
+
+                actions
+                {
+
+                    action(ActionName)
+                    {
+                        RunObject = page "Sales Invoice";
+                        Image = TileNew;
+
+                        trigger OnAction()
+                        begin
+
+                        end;
+                    }
                 }
             }
         }
