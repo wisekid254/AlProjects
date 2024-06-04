@@ -1,13 +1,13 @@
-page 50146 SalesInvoiceCuePage
+page 50145 "Customer Sales History"
 {
     PageType = CardPart;
     SourceTable = SalesInvoiceCueTable;
 
     layout
     {
-        area(content)
+        area(Content)
         {
-            cuegroup(SalesCueContainer)
+            cuegroup(overview)
             {
                 field(SalesInvoicesOpen; Rec.SalesInvoicesOpen)
                 {
@@ -27,35 +27,9 @@ page 50146 SalesInvoiceCuePage
                     ApplicationArea = all;
                     DrillDownPageId = "Customer List";
                 }
-            }
-            cuegroup(SalesActionontainer)
-            {
-                Caption = 'New Sales Invoice';
 
-                actions
-                {
-
-                    action(ActionName)
-                    {
-                        RunObject = page "Sales Invoice";
-                        Image = TileNew;
-
-                        trigger OnAction()
-                        begin
-
-                        end;
-                    }
-                }
             }
         }
     }
 
-    trigger OnOpenPage();
-    begin
-        Rec.Reset();
-        if not Rec.Get() then begin
-            Rec.Init();
-            Rec.Insert();
-        end;
-    end;
 }

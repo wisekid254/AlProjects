@@ -15,6 +15,18 @@ table 50146 SalesInvoiceCueTable
             CalcFormula = count("Sales Header" where("Document Type" = Filter(Invoice), Status = FILTER(Open)));
 
         }
+        field(3; NoOfSalesQuotes; Integer)
+        {
+            FieldClass = FlowField;
+            CalcFormula = count("Sales Header" where("Document Type" = Filter(Invoice), Status = FILTER(Open)));
+
+        }
+        field(4; NoOfSalesOrder; Integer)
+        {
+            FieldClass = FlowField;
+            CalcFormula = count("Sales Header" where("Document Type" = Filter(Invoice), Status = FILTER(Open)));
+
+        }
     }
 
     keys
