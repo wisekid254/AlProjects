@@ -17,6 +17,15 @@ page 50148 RoleCenterName
                 {
                     Caption = 'Invoices';
                 }
+
+            }
+            group(Group2)
+            {
+                part(Part3; "Customer Sales History")
+                {
+                    Caption = 'Customer Sale History';
+                    ApplicationArea = all;
+                }
             }
         }
     }
