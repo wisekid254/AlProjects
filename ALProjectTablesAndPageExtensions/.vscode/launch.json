@@ -1,6 +1,7 @@
 {
     "version": "0.2.0",
     "configurations": [
+        
         {
             "name": "Your own server",
             "request": "launch",
@@ -9,7 +10,7 @@
             "server": "http://localhost:8080/BC200/",
             "serverInstance": "BC200",
             "authentication": "Windows",
-            "startupObjectId": 50150,
+            "startupObjectId": 50155,
             "port": 7049,
             "startupObjectType": "Page",
             "breakOnError": "All",
