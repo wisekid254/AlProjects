@@ -1,7 +1,7 @@
 page 50155 "Sacco Role Center"
 {
     PageType = RoleCenter;
-    Caption = 'My Role Center';
+    Caption = 'Mwenyehaki Sacco Role Center';
 
     layout
     {
@@ -33,15 +33,15 @@ page 50155 "Sacco Role Center"
                 Image = RegisteredDocs;
                 action(PostedServiceInvoices)
                 {
-                    Caption = 'Registation';
-                    RunObject = Page "Posted Service Invoices";
+                    Caption = 'Member Registation';
+                    RunObject = Page "Member Management";
                     ApplicationArea = All;
                 }
 
                 action(PostedSalesInvoices)
                 {
                     Caption = 'Acccount Management';
-                    RunObject = Page "Posted Sales Invoices";
+                    RunObject = Page "Member Management";
                     ApplicationArea = All;
                 }
 
@@ -52,14 +52,69 @@ page 50155 "Sacco Role Center"
                     {
                         Caption = 'Loan Application';
                         ApplicationArea = All;
-                        RunObject = page "Sales Document Entity";
+                        RunObject = page "Loan List";
                     }
                     action("Loan Payment")
                     {
                         Caption = 'Loan Payment';
                         ApplicationArea = All;
-                        RunObject = page "Sales Document Line Entity";
+                        RunObject = page "Loan List";
                     }
+                }
+            }
+            group(SavingManagement)
+            {
+                Caption = 'Savings Management';
+                Image = RegisteredDocs;
+                action("Savings Application")
+                {
+                    Caption = 'Savings Application';
+                    ApplicationArea = all;
+                    RunObject = page "Savings List";
+                }
+                group(Savings)
+                {
+                    Caption = 'Savings';
+                    action("Savings Deposit")
+                    {
+                        Caption = 'Savings Deposit';
+                        ApplicationArea = All;
+                    }
+                    action("Savings Withdrawal")
+                    {
+                        Caption = 'Savings Withdrawal';
+                        ApplicationArea = All;
+                    }
+                    action("Saving Interest")
+                    {
+                        Caption = 'Saving Interest';
+                        ApplicationArea = All;
+                    }
+                }
+            }
+            group(FinancialManagement)
+            {
+                Caption = 'Financial Management';
+                Image = RegisteredDocs;
+                action("Financial Statement")
+                {
+                    Caption = 'Financial Statement';
+                    ApplicationArea = All;
+                }
+                action("General Ledger")
+                {
+                    Caption = 'General Ledger';
+                    ApplicationArea = All;
+                }
+                action("Account Payable")
+                {
+                    Caption = 'Account Payable';
+                    ApplicationArea = All;
+                }
+                action("Account Receivable")
+                {
+                    Caption = 'Account Receivable';
+                    ApplicationArea = All;
                 }
             }
         }
@@ -108,9 +163,34 @@ page 50155 "Sacco Role Center"
 
         area(Processing)
         {
-            action(SeeSalesInvoices)
+            action(NewMember)
             {
-                Caption = 'See Sales Invoices';
+                Caption = 'New Member';
+                RunObject = Page "Posted Sales Invoices";
+            }
+            action("New Deposit")
+            {
+                Caption = 'New Deposit';
+                RunObject = Page "Posted Sales Invoices";
+            }
+            action("New Withdrawal")
+            {
+                Caption = 'New Withdrawal';
+                RunObject = Page "Posted Sales Invoices";
+            }
+            action("New Loan Application")
+            {
+                Caption = 'New Loan Application';
+                RunObject = Page "Posted Sales Invoices";
+            }
+            action("Disburse Loan")
+            {
+                Caption = 'Disburse Loan';
+                RunObject = Page "Posted Sales Invoices";
+            }
+            action("Send Notification")
+            {
+                Caption = 'Send Notification';
                 RunObject = Page "Posted Sales Invoices";
             }
 
@@ -118,22 +198,53 @@ page 50155 "Sacco Role Center"
 
         area(Creation)
         {
-            action(AddSalesInvoice)
+            action("Find Entries")
             {
-                Caption = 'Add Sales Invoice';
+                Caption = 'Find Entries';
                 Image = NewInvoice;
                 RunObject = Page "Sales Invoice";
                 RunPageMode = Create;
+            }
+            action("Notify Delayed Loan Payments")
+            {
+                Caption = 'Notify Delayed Loan Payments';
+                Image = NewInvoice;
+                RunObject = Page "Sales Analysis View Card";
+
             }
         }
 
         area(Reporting)
         {
-            action(SalesInvoicesReport)
+            action("Member Reports")
             {
-                Caption = 'Sales Invoices Report';
+                Caption = 'Member';
                 Image = "Report";
                 RunObject = Report "Aged Accounts Payable";
+            }
+            action("Savings Report")
+            {
+                Caption = 'Savings Report';
+                Image = "Report";
+                RunObject = Report "Aged Accounts Payable";
+            }
+            action("Financial Report")
+            {
+                Caption = 'Financial Report';
+                Image = "Report";
+
+            }
+            action("Compliance Report")
+            {
+                Caption = 'Compliance Report';
+                Image = "Report";
+
+            }
+            action("Loan Repoprt")
+            {
+                Caption = 'Loan Report';
+                Image = "Report";
+
             }
         }
     }
@@ -144,5 +255,5 @@ profile MwenyeHaki
 {
     ProfileDescription = 'Sample Profile';
     RoleCenter = "Sacco Role Center";
-    Caption = 'My profile';
+    Caption = 'Mwenyehaki Sacco Ltd';
 }
