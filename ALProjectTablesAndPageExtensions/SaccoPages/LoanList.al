@@ -9,7 +9,7 @@ page 50101 "Loan List"
         {
             repeater(Group)
             {
-                field("Loan No."; Rec."Loan No.")
+                field("Loan No."; Rec."Loan id")
                 {
                     ApplicationArea = All;
                 }

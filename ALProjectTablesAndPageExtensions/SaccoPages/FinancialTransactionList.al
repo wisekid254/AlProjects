@@ -1,36 +1,31 @@
-page 50102 "Loan Card"
+page 50103 "Financial Transaction List"
 {
-    PageType = Card;
-    SourceTable = "Loan";
+    PageType = List;
+    SourceTable = "Financial Transaction";
 
     layout
     {
         area(content)
         {
-            group(Group)
+            repeater(Group)
             {
-                field("Loan No."; Rec."Loan id")
+                field("Transaction ID"; Rec."Transaction ID")
                 {
                     ApplicationArea = All;
-                    Editable = false;
                 }
                 field("Member ID"; Rec."Member ID")
                 {
                     ApplicationArea = All;
                 }
-                field("Loan Amount"; Rec."Loan Amount")
+                field("Transaction Date"; Rec."Transaction Date")
                 {
                     ApplicationArea = All;
                 }
-                field("Loan Date"; Rec."Loan Date")
+                field("Amount"; Rec."Amount")
                 {
                     ApplicationArea = All;
                 }
-                field("Due Date"; Rec."Due Date")
-                {
-                    ApplicationArea = All;
-                }
-                field("Interest Rate"; Rec."Interest Rate")
+                field("Transaction Type"; Rec."Transaction Type")
                 {
                     ApplicationArea = All;
                 }
@@ -42,16 +37,16 @@ page 50102 "Loan Card"
     {
         area(processing)
         {
-            action(Save)
+            action(NewTransaction)
             {
                 ApplicationArea = All;
-                Caption = 'Save';
-                Image = Save;
+                Caption = 'New Transaction';
+                Image = New;
                 Promoted = true;
                 PromotedCategory = Process;
                 trigger OnAction()
                 begin
-                    CurrPage.Update();
+                    PAGE.Run(PAGE::"Financial Transaction Card");
                 end;
             }
         }

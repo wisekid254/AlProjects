@@ -1,36 +1,43 @@
-page 50102 "Loan Card"
+page 50110 "Loan Application List"
 {
-    PageType = Card;
-    SourceTable = "Loan";
+    PageType = List;
+    SourceTable = "Loan Application";
 
     layout
     {
         area(content)
         {
-            group(Group)
+            repeater(Group)
             {
-                field("Loan No."; Rec."Loan id")
+                field("Application ID"; Rec."Application ID")
                 {
                     ApplicationArea = All;
-                    Editable = false;
+                }
+                field("Loan ID"; Rec."Loan ID")
+                {
+                    ApplicationArea = All;
                 }
                 field("Member ID"; Rec."Member ID")
                 {
                     ApplicationArea = All;
                 }
-                field("Loan Amount"; Rec."Loan Amount")
-                {
-                    ApplicationArea = All;
-                }
-                field("Loan Date"; Rec."Loan Date")
-                {
-                    ApplicationArea = All;
-                }
-                field("Due Date"; Rec."Due Date")
+                field("Requested Amount"; Rec."Requested Amount")
                 {
                     ApplicationArea = All;
                 }
                 field("Interest Rate"; Rec."Interest Rate")
+                {
+                    ApplicationArea = All;
+                }
+                field("Loan Term"; Rec."Loan Term")
+                {
+                    ApplicationArea = All;
+                }
+                field("Application Date"; Rec."Application Date")
+                {
+                    ApplicationArea = All;
+                }
+                field("Status"; Rec."Status")
                 {
                     ApplicationArea = All;
                 }
@@ -42,16 +49,16 @@ page 50102 "Loan Card"
     {
         area(processing)
         {
-            action(Save)
+            action(NewLoanApplication)
             {
                 ApplicationArea = All;
-                Caption = 'Save';
-                Image = Save;
+                Caption = 'New Loan Application';
+                Image = New;
                 Promoted = true;
                 PromotedCategory = Process;
                 trigger OnAction()
                 begin
-                    CurrPage.Update();
+                    PAGE.Run(PAGE::"Loan Application Card");
                 end;
             }
         }

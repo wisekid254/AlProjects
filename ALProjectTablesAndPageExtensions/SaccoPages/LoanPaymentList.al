@@ -1,36 +1,35 @@
-page 50102 "Loan Card"
+page 50111 "Loan Payment List"
 {
-    PageType = Card;
-    SourceTable = "Loan";
+    PageType = List;
+    SourceTable = "Loan Payment";
 
     layout
     {
         area(content)
         {
-            group(Group)
+            repeater(Group)
             {
-                field("Loan No."; Rec."Loan id")
+                field("Payment ID"; Rec."Payment ID")
                 {
                     ApplicationArea = All;
-                    Editable = false;
+                }
+                field("Loan ID"; Rec."Loan ID")
+                {
+                    ApplicationArea = All;
                 }
                 field("Member ID"; Rec."Member ID")
                 {
                     ApplicationArea = All;
                 }
-                field("Loan Amount"; Rec."Loan Amount")
+                field("Payment Amount"; Rec."Payment Amount")
                 {
                     ApplicationArea = All;
                 }
-                field("Loan Date"; Rec."Loan Date")
+                field("Payment Date"; Rec."Payment Date")
                 {
                     ApplicationArea = All;
                 }
-                field("Due Date"; Rec."Due Date")
-                {
-                    ApplicationArea = All;
-                }
-                field("Interest Rate"; Rec."Interest Rate")
+                field("Remaining Balance"; Rec."Remaining Balance")
                 {
                     ApplicationArea = All;
                 }
@@ -42,16 +41,16 @@ page 50102 "Loan Card"
     {
         area(processing)
         {
-            action(Save)
+            action(NewLoanPayment)
             {
                 ApplicationArea = All;
-                Caption = 'Save';
-                Image = Save;
+                Caption = 'New Loan Payment';
+                Image = New;
                 Promoted = true;
                 PromotedCategory = Process;
                 trigger OnAction()
                 begin
-                    CurrPage.Update();
+                    PAGE.Run(PAGE::"Loan Payment Card");
                 end;
             }
         }

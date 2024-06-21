@@ -4,7 +4,7 @@ table 50157 "Loan"
 
     fields
     {
-        field(1; "Loan No."; Code[20])
+        field(1; "Loan id"; Code[20])
         {
             DataClassification = CustomerContent;
             Caption = 'Loan ID';
@@ -37,11 +37,27 @@ table 50157 "Loan"
             Caption = 'Interest Rate (%)';
         }
         // Add other fields as needed
+        field(7; "Loan Term"; Integer)
+        {
+            DataClassification = ToBeClassified;
+            Caption = 'Loan Term';
+        }
+        field(8; "Disbursement Date"; date)
+        {
+            DataClassification = ToBeClassified;
+            Caption = 'Disbursement Date';
+        }
+        field(9; Status; Option)
+        {
+            DataClassification = ToBeClassified;
+            OptionMembers = "paid","Payment Pending";
+            Caption = 'Statu';
+        }
     }
 
     keys
     {
-        key(PK; "Loan No.")
+        key(PK; "Loan id")
         {
             Clustered = true;
         }
@@ -50,7 +66,7 @@ table 50157 "Loan"
     trigger OnInsert()
     begin
         // Automatically generate a Loan ID if not specified
-        if "Loan No." = '' then
-            "Loan No." := STRSUBSTNO('%1', FORMAT(CREATEGUID()));
+        if "Loan id" = '' then
+            "Loan id" := STRSUBSTNO('%1', FORMAT(CREATEGUID()));
     end;
 }

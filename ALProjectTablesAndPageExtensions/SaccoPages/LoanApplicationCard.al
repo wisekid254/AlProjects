@@ -1,7 +1,7 @@
-page 50102 "Loan Card"
+page 50116 "Loan Application Card"
 {
     PageType = Card;
-    SourceTable = "Loan";
+    SourceTable = "Loan Application";
 
     layout
     {
@@ -9,28 +9,36 @@ page 50102 "Loan Card"
         {
             group(Group)
             {
-                field("Loan No."; Rec."Loan id")
+                field("Application ID"; Rec."Application ID")
                 {
                     ApplicationArea = All;
                     Editable = false;
+                }
+                field("Loan ID"; Rec."Loan ID")
+                {
+                    ApplicationArea = All;
                 }
                 field("Member ID"; Rec."Member ID")
                 {
                     ApplicationArea = All;
                 }
-                field("Loan Amount"; Rec."Loan Amount")
-                {
-                    ApplicationArea = All;
-                }
-                field("Loan Date"; Rec."Loan Date")
-                {
-                    ApplicationArea = All;
-                }
-                field("Due Date"; Rec."Due Date")
+                field("Requested Amount"; Rec."Requested Amount")
                 {
                     ApplicationArea = All;
                 }
                 field("Interest Rate"; Rec."Interest Rate")
+                {
+                    ApplicationArea = All;
+                }
+                field("Loan Term"; Rec."Loan Term")
+                {
+                    ApplicationArea = All;
+                }
+                field("Application Date"; Rec."Application Date")
+                {
+                    ApplicationArea = All;
+                }
+                field("Status"; Rec."Status")
                 {
                     ApplicationArea = All;
                 }

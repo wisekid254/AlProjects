@@ -1,6 +1,8 @@
 page 50146 SalesInvoiceCuePage
 {
     PageType = CardPart;
+    UsageCategory = Administration;
+    ApplicationArea = all;
     SourceTable = SalesInvoiceCueTable;
 
     layout

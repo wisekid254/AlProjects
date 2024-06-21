@@ -1,7 +1,7 @@
 page 50155 "Sacco Role Center"
 {
     PageType = RoleCenter;
-    Caption = 'Mwenyehaki Sacco Role Center';
+    Caption = 'Mkulima Role Center';
 
     layout
     {
@@ -9,7 +9,7 @@ page 50155 "Sacco Role Center"
         {
             group(Group1)
             {
-                part(Part1; RoleCenterHeadline)
+                part(Part1; progressHeadlines)
                 {
                     ApplicationArea = All;
                 }
@@ -31,14 +31,14 @@ page 50155 "Sacco Role Center"
             {
                 Caption = 'Member Management';
                 Image = RegisteredDocs;
-                action(PostedServiceInvoices)
+                action("Member Registation")
                 {
                     Caption = 'Member Registation';
                     RunObject = Page "Member Management";
                     ApplicationArea = All;
                 }
 
-                action(PostedSalesInvoices)
+                action("Acccount Management")
                 {
                     Caption = 'Acccount Management';
                     RunObject = Page "Member Management";
@@ -100,21 +100,26 @@ page 50155 "Sacco Role Center"
                 {
                     Caption = 'Financial Statement';
                     ApplicationArea = All;
+                    RunObject = page "Financial Transaction List";
                 }
                 action("General Ledger")
                 {
                     Caption = 'General Ledger';
                     ApplicationArea = All;
+                    RunObject = page "Financial Transaction List";
                 }
                 action("Account Payable")
                 {
                     Caption = 'Account Payable';
                     ApplicationArea = All;
+                    RunObject = page "Financial Transaction List";
                 }
                 action("Account Receivable")
                 {
                     Caption = 'Account Receivable';
                     ApplicationArea = All;
+                    RunObject = page "Financial Transaction List";
+
                 }
             }
         }
@@ -166,7 +171,7 @@ page 50155 "Sacco Role Center"
             action(NewMember)
             {
                 Caption = 'New Member';
-                RunObject = Page "Posted Sales Invoices";
+                RunObject = Page "Member Management";
             }
             action("New Deposit")
             {
@@ -240,7 +245,7 @@ page 50155 "Sacco Role Center"
                 Image = "Report";
 
             }
-            action("Loan Repoprt")
+            action("Loan Report")
             {
                 Caption = 'Loan Report';
                 Image = "Report";
@@ -255,5 +260,5 @@ profile MwenyeHaki
 {
     ProfileDescription = 'Sample Profile';
     RoleCenter = "Sacco Role Center";
-    Caption = 'Mwenyehaki Sacco Ltd';
+    Caption = 'Mkulima SACCO';
 }
