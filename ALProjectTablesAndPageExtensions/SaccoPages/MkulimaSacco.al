@@ -1,7 +1,7 @@
 page 50155 "Sacco Role Center"
 {
     PageType = RoleCenter;
-    Caption = 'Mkulima Role Center';
+    Caption = 'Mkulima SACCO Role Center';
 
     layout
     {
@@ -256,9 +256,9 @@ page 50155 "Sacco Role Center"
 }
 
 // Creates a profile that uses the Role Center
-profile MwenyeHaki
+profile Mkulima
 {
-    ProfileDescription = 'Sample Profile';
+    ProfileDescription = 'Mkulima SACCO';
     RoleCenter = "Sacco Role Center";
     Caption = 'Mkulima SACCO';
 }

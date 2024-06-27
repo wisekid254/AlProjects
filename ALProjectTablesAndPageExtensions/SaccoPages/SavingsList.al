@@ -2,6 +2,7 @@ page 50158 "Savings List"
 {
     PageType = List;
     SourceTable = "Savings";
+    CardPageId = "Savings Card";
 
     layout
     {
